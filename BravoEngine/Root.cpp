@@ -39,7 +39,7 @@ bool EngineRoot::InitEngine()
 		return false;
 	}
 
-	result = _RenderManager->InitDirect3D();
+	result = _RenderManager->InitDirect3D(_hWindow, _WndWidth, _WndHeight);
 	if (result == false)
 	{
 		MessageBox(0, L"InitDirect3D() Failed", L"Error", 0);

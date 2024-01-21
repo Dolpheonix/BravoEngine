@@ -1,5 +1,9 @@
-﻿  Main.cpp
+﻿  RenderManager.cpp
+C:\Users\user\Documents\BravoEngine\BravoEngine\Core\RenderManager.cpp(108,2): error C2059: syntax error: 'return'
+  Main.cpp
   Root.cpp
 C:\Users\user\Documents\BravoEngine\BravoEngine\Root.cpp(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+C:\Users\user\Documents\BravoEngine\BravoEngine\Root.cpp(42,25): error C2660: 'RenderManager::InitDirect3D': function does not take 0 arguments
+C:\Users\user\Documents\BravoEngine\BravoEngine\Core\RenderManager.h(23,7): message : see declaration of 'RenderManager::InitDirect3D'
+C:\Users\user\Documents\BravoEngine\BravoEngine\Root.cpp(42,25): message : while trying to match the argument list '()'
   Generating Code...
-  BravoEngine.vcxproj -> C:\Users\user\Documents\BravoEngine\x64\Debug\BravoEngine.exe

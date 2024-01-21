@@ -1,4 +1,5 @@
 #include "Root.h"
+#include "Util/Util.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
     PSTR cmdLine, int showCmd)
@@ -16,12 +17,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
         }
         return MainApp->RunEngine();
     }
-    catch (std::exception& e)
+    catch (BVException& e)
     {
-        std::string errstr = std::string(e.what());
-        std::wstring errwstr;
-        errwstr.assign(errstr.begin(), errstr.end());
-        MessageBox(nullptr, errwstr.c_str(), L"HR Failed", MB_OK);
+        MessageBox(nullptr, e.ToString().c_str(), L"HR Failed", MB_OK);
         return 0;
     }
 }

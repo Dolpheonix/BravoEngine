@@ -20,7 +20,7 @@ public:
 	static RenderManager* GetSingleton();
 
 	void OnResize();
-	bool InitDirect3D();
+	bool InitDirect3D(HWND hwnd, int width, int height);
 
 private:
 	static RenderManager* _Singleton;
@@ -33,7 +33,7 @@ private:
 
 	Microsoft::WRL::ComPtr<ID3D12CommandQueue> _CommandQueue;
 	Microsoft::WRL::ComPtr<ID3D12CommandAllocator> _CommandAllocator;
-	Microsoft::WRL::ComPtr<ID3D12CommandList> _CommandList;
+	Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> _CommandList;
 
 	static const int SwapChainBufferCount = 2;
 
@@ -50,11 +50,19 @@ private:
 	DXGI_FORMAT _BackbufferFormat;
 	DXGI_FORMAT _DepthStencilFormat;
 
+	bool _b4xMsaaEnabled = false;
+	UINT _4xMsaaQuality = 0;
+
 	UINT64 _CurrFence;
 	int _CurrentBuffer;
 	UINT _RtvDescriptorSize;
 	UINT _DsvDescriptorSize;
 	UINT _SrvDescriptorSize;
 
+	int _ClientWidth = 800;
+	int _ClientHeight = 600;
+
+	int _NumRenderTargetBuffer = SwapChainBufferCount;
+	int _NumDepthStencilBuffer;
 
 };

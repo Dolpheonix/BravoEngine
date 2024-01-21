@@ -3,6 +3,13 @@
 #include <string>
 #include <comdef.h>
 
+inline std::wstring AtoW(const std::string& str)
+{
+	WCHAR wstr[512];
+	MultiByteToWideChar(CP_ACP, 0, str.c_str(), -1, wstr, 512);
+	return std::wstring(wstr);
+}
+
 class BVException
 {
 public:
@@ -24,13 +31,13 @@ public:
 };
 
 #ifndef BV_Throw
-#define BV_Throw(x)
-{
-	HRESULT hr = (x);
-	std::wstring wFileName = AnsiToWString(__FILE__);
-	if (FAILED(hr))
-	{
-		throw BVException(hr, L#x, wFileName, __LINE__);
-	}
+#define BV_Throw(x)										\
+{														\
+	HRESULT hr = (x);									\
+	std::wstring wFileName = AtoW(__FILE__);			\
+	if (FAILED(hr))										\
+	{													\
+		throw BVException(hr, L#x, wFileName, __LINE__);\
+	}													\
 }
 #endif
