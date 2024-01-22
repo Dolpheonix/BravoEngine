@@ -142,6 +142,7 @@
     <ClCompile Include="Core\RenderManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Root.cpp" />
+    <ClCompile Include="Util\Camera.cpp" />
     <ClCompile Include="Util\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +150,8 @@
     <ClInclude Include="Core\Core.h" />
     <ClInclude Include="Core\RenderManager.h" />
     <ClInclude Include="Root.h" />
+    <ClInclude Include="Util\Camera.h" />
+    <ClInclude Include="Util\MathUtil.h" />
     <ClInclude Include="Util\Timer.h" />
     <ClInclude Include="Util\Util.h" />
   </ItemGroup>
